@@ -1,0 +1,11 @@
+name: Movies
+modelClass: Tobias\Movies\Models\Movie
+form: $/tobias/movies/models/movie/fields.yaml
+defaultRedirect: tobias/movies/movies
+create:
+    redirect: 'tobias/movies/movies/update/:id'
+    redirectClose: tobias/movies/movies
+update:
+    redirect: tobias/movies/movies
+    redirectClose: tobias/movies/movies
+preview: {  }

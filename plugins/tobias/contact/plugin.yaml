@@ -1,0 +1,6 @@
+plugin:
+    name: 'tobias.contact::lang.plugin.name'
+    description: 'tobias.contact::lang.plugin.description'
+    author: Tobias
+    icon: oc-icon-mail-forward
+    homepage: ''

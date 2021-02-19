@@ -1,0 +1,42 @@
+title = "Movies"
+url = "/movies/:page?"
+layout = "default"
+is_hidden = 0
+
+==
+<?
+    use Tobias\Movies\Models\Movie;
+    function onStart(){
+        $this['movies'] = Movie::orderBy('year','asc')->paginate(20);   
+        
+        
+        $this['name'] = Input::get('name');
+        //dd($this['name']);
+        
+        $this['movies'] = Movie::where('name', 'like', $this['name'])->get();
+    }
+?>
+==
+
+<ul class="movie-list list-group">
+    {% for movie in movies %}
+    <li class="list-group-item list-group-item-action">
+        {# Use spaceless tag to remove spaces inside the A tag. #}
+        <h3>
+            <a href="/movie/{{movie.slug}}">
+                {{ movie.name }} - {{ movie.year }}
+            </a>
+        </h3>
+        <div class="text-secondary">
+            {{ html_limit(movie.description, 150)|raw}}
+        </div>
+    </li>
+    {% else %}
+    <li class="no-data">No Movies found</li>
+    {% endfor %}
+</ul>
+
+<div class="d-flex font-weight-bolder">
+    {{movies.render|raw}}
+    <!-- Pagination via october -->
+</div>

@@ -1,0 +1,69 @@
+title = "Movie"
+url = "/movie/:slug"
+layout = "default"
+is_hidden = 0
+
+==
+<?
+    use Tobias\Movies\Models\Movie;
+    function onStart(){
+        $this['movie'] = Movie::where('slug', '=', $this->param('slug'))->first();   
+    }
+?>
+==
+<div class="row">
+    <div class="col-md-6">
+        {% if movie %}
+        <h2>
+            {{ movie.name }}
+        </h2>
+
+
+        <h4>
+            ({{ movie.year}})
+        </h4>
+        <hr>
+        <h3>Description</h3>
+        {{movie.description|raw}}
+
+
+    </div>
+    <div class="col-md-6"><img src="{{movie.poster.thumb(300,auto)}}" alt=""></div>
+    <!-- <div class="col-md-6"><img src="{{movie.poster.thumb(200,200,{'mode':'crop'})}}" alt=""></div> -->
+</div>
+
+
+<h3>Actors</h3>
+<ul>
+    {% for actor in movie.actors%}
+    <li>
+        {{ actor.name }} {{ actor.lastname}}
+    </li>
+    {% endfor %}
+</ul>
+
+
+<h3 class="mt-5">Gallery</h3>
+<div class="row bg-light rounded border border-secondary">
+    <ul class="p-3">
+        {% for image in movie.movie_gallery%}
+        <a href="{{image.path}}">
+            <img src="{{image.thumb(200,200,{'mode':'crop'})}}" alt="">
+        </a>
+
+        {% endfor %}
+    </ul>
+</div>
+
+<h3 class="mt-5">Genres</h3>
+<ul>
+    {% for genre in movie.genres%}
+    <a href="/genres/{{genre.slug}}">
+        <span class="badge badge-secondary">{{ genre.genre_title}}</span>
+    </a>
+    {% endfor %}
+</ul>
+
+{% else %}
+{{ notFoundMessage }}
+{% endif %}

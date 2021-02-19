@@ -1,0 +1,16 @@
+
+.nav-item{
+    transition: all 1.6s linear; 
+    border-bottom: 1px solid white;
+-webkit-transition: border-color 1s ease;
+         -moz-transition: border-bottom 0.5s ease;
+           -o-transition: border-bottom 0.5s ease;
+          -ms-transition: border-bottom 0.5s ease;
+              transition: border-bottom 0.5s ease;    
+}
+.active{
+    border-bottom: 1px solid grey;
+}
+.nav-item:hover{
+    border-bottom: 1px solid grey;
+}

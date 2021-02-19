@@ -1,0 +1,4 @@
+title: Actors
+modelClass: Tobias\Movies\Models\Actor
+toolbar:
+    buttons: reorder_toolbar

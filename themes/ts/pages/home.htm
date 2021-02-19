@@ -1,0 +1,72 @@
+title = "Home"
+url = "/"
+layout = "default"
+is_hidden = 0
+
+[actors]
+results = 0
+sortOrder = "name desc"
+
+[siteSearchInclude]
+==
+<?
+    use Tobias\Movies\Models\Movie;
+
+    function onStart(){
+        $this['movies'] = Movie::take(4)->get();   
+
+    }
+?>
+==
+<form action="{{ 'search' | page }}" method="get">
+    <div class="form-group">
+        <input name="q" type="text" placeholder="What are you looking for?" autocomplete="off" class="form-control">
+        <button class="btn btn-primary" type="submit">Search</button>
+    </div>
+</form>
+<hr>
+<ul class="movie-list list-group">
+    {% for movie in movies %}
+    <li class="list-group-item list-group-item-action">
+        {# Use spaceless tag to remove spaces inside the A tag. #}
+        <h3>
+            <a href="/movie/{{movie.slug}}">
+                {{ movie.name }} - {{ movie.year }}
+            </a>
+        </h3>
+        <div class="text-secondary">
+            {{ html_limit(movie.description, 150)|raw}}
+        </div>
+    </li>
+    {% else %}
+    <li class="no-data">No Movies found</li>
+    {% endfor %}
+</ul>
+<hr>
+
+<h1>Hello world</h1>
+<p>first theme</p>
+<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis quam consequuntur voluptatibus vel commodi, totam
+    ratione harum tenetur quod, voluptatum soluta ut beatae nulla, pariatur ducimus aspernatur adipisci est magni!</p>
+
+<div class="row">
+    <div class="col-md-8">
+        öLorem ipsum dolor sit amet consectetur adipisicing elit. Odit sequi temporibus alias voluptates doloremque
+        doloribus! Perferendis amet eligendi, veritatis a quae dolorum expedita iure dolorem id corrupti ipsa tempore
+        rerum!
+    </div>
+    <div class="col-md-4">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. In eligendi sed necessitatibus neque maiores,
+        perferendis quisquam qui pariatur soluta vel sint expedita similique voluptatem dolore incidunt corporis impedit
+        fuga nostrum.
+    </div>
+
+
+    {% set actors = actors.actors %}
+
+    <ul>
+        {% for actor in actors %}
+        <li>{{actor.name}} {{actor.lastname}}</li>
+        {% endfor %}
+    </ul>
+</div>

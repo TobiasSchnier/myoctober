@@ -1,0 +1,10 @@
+name: Actors
+form: $/tobias/movies/models/actor/fields.yaml
+modelClass: Tobias\Movies\Models\Actor
+defaultRedirect: tobias/movies/actors
+create:
+    redirect: 'tobias/movies/actors/update/:id'
+    redirectClose: tobias/movies/actors
+update:
+    redirect: tobias/movies/actors
+    redirectClose: tobias/movies/actors

@@ -1,0 +1,6 @@
+plugin:
+    name: 'tobias.profile::lang.plugin.name'
+    description: 'tobias.profile::lang.plugin.description'
+    author: Tobias
+    icon: oc-icon-user-md
+    homepage: ''

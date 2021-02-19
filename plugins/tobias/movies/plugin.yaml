@@ -1,0 +1,20 @@
+plugin:
+    name: 'tobias.movies::lang.plugin.name'
+    description: 'tobias.movies::lang.plugin.description'
+    author: Tobias
+    icon: oc-icon-video-camera
+    homepage: ''
+navigation:
+    main-menu-item:
+        label: Movies
+        url: tobias/movies/movies
+        icon: icon-video-camera
+        sideMenu:
+            side-menu-item:
+                label: Genres
+                url: tobias/movies/genres
+                icon: icon-tag
+            side-menu-item2:
+                label: Actors
+                url: tobias/movies/actors
+                icon: icon-user

@@ -1,0 +1,10 @@
+name: Genres
+form: $/tobias/movies/models/genre/fields.yaml
+modelClass: Tobias\Movies\Models\Genre
+defaultRedirect: tobias/movies/genres
+create:
+    redirect: 'tobias/movies/genres/update/:id'
+    redirectClose: tobias/movies/genres
+update:
+    redirect: tobias/movies/genres
+    redirectClose: tobias/movies/genres
