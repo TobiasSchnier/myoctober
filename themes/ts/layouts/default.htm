@@ -49,6 +49,20 @@ security = "all"
     <!-- Scripts -->
     <script src="{{ 'assets/vendor/jquery.js'|theme }}"></script>
     <script src="{{ 'assets/javascript/app.js'|theme }}"></script>
+
+    <script type="text/javascript">
+        jQuery(document).ready(function ($) {
+            $('.contactForm').on('ajaxError', function (event, message) {
+                $('.flash').removeClass('active');
+                $('.flash.error').addClass('active');
+            });
+            $('.contactForm').on('ajaxSuccess', function (event, message) {
+                $('.flash').removeClass('active');
+                $('.flash.success').addClass('active');
+            });
+        });
+    </script>
+
     {% framework extras %}
     {% scripts %}
 

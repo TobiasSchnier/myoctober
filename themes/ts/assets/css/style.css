@@ -14,3 +14,10 @@
 .nav-item:hover{
     border-bottom: 1px solid grey;
 }
+
+.flash{
+    display:none;
+}
+.flash.active{
+    display: block;
+}

@@ -1,4 +1,4 @@
-<form data-request="contactform::onSend" data-request-validate data-request-flash>
+<form data-request="contactform::onSend" class="contactForm" data-request-validate data-request-flash>
 
     <div class="form-group">
         <label for="formGroupExampleInput">Name</label>
@@ -22,8 +22,15 @@
         </div>
     </div>
 
-    <div class="alert alert-danger" data-validate-error>
+    <!-- <div class="alert alert-danger" data-validate-error>
         <p data-message></p>
+    </div> -->
+
+    <div class="flash error alert alert-danger ">
+        Ooooooops something went wrong,please check required fields
+    </div>
+    <div class="flash success alert alert-success">
+        This worked out fine!
     </div>
 
 </form>

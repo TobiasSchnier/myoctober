@@ -9,12 +9,26 @@ navigation:
         label: Movies
         url: tobias/movies/movies
         icon: icon-video-camera
+        permissions:
+            - manage_movies
         sideMenu:
             side-menu-item:
                 label: Genres
                 url: tobias/movies/genres
                 icon: icon-tag
+                permissions:
+                    - manage_genres
             side-menu-item2:
                 label: Actors
                 url: tobias/movies/actors
                 icon: icon-user
+permissions:
+    manage_movies:
+        tab: 'tobias.movies::lang.plugin.name'
+        label: 'Manage Movies'
+    manage_genres:
+        tab: 'tobias.movies::lang.plugin.name'
+        label: 'Manage Genres'
+    delete_movies:
+        tab: 'tobias.movies::lang.plugin.name'
+        label: 'Delete Movies'
