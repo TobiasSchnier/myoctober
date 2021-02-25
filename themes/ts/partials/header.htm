@@ -27,18 +27,18 @@
                 </li>
                 <li class="nav-item {% if this.page.id == 'login' %}active{% endif %}">
                     <a class="nav-link" href="{{ 'login'|page}}">
-                    {% if user %}
+                        {% if user %}
                         Profile
-                    {% else %}
+                        {% else %}
                         Login
-                    {% endif %}
-                    
+                        {% endif %}
+
                     </a>
                 </li>
                 {% if user %}
-                    <li class="nav-item {% if this.page.id == 'logout' %}active{% endif %}" style="cursor: pointer">
+                <li class="nav-item {% if this.page.id == 'logout' %}active{% endif %}" style="cursor: pointer">
                     <a class="nav-link" data-request="onLogout" data-request-data="redirect: '/'">Sign out</a>
-                    </li>
+                </li>
                 {% endif %}
             </ul>
         </div>
