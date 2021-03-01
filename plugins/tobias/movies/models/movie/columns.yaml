@@ -9,3 +9,13 @@ columns:
         type: number
         searchable: false
         sortable: true
+    poster:
+        label: Poster
+        type: partial
+        path: ~/plugins/tobias/movies/models/movie/_poster_column.htm
+    genres:
+        label: Genres
+        type: text
+        searchable: true
+        select: genre_title
+        relation: genres

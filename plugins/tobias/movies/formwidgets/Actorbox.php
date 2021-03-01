@@ -32,6 +32,7 @@ class ActorBox extends FormWidgetBase{
 
     public function getSaveValue($actors){
         $newArray = [];
+        if (is_array($actors) || is_object($actors)){
         foreach ($actors as $actorID) {
             if (!is_numeric($actorID)) {
                 $newActor = new Actor;
@@ -44,6 +45,7 @@ class ActorBox extends FormWidgetBase{
                 $newArray[] = $actorID;
             }
         }
+    }
         // dd($newArray);
 
         return $newArray;
