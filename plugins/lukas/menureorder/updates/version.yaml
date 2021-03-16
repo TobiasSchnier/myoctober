@@ -1,0 +1,11 @@
+1.1.1:
+    - Delete database entries for removed navigation items
+1.1.0:
+    - Move navigation from backend menu to settings menu
+    - Actually mark the navigation as active
+1.0.1:
+    - Add default value to sort_order column
+    - add_sort_order_default_value.php
+1.0.0:
+    - 'First version of Menu Reorder'
+    - create_lukas_menureorder_backendmainmenu.php
