@@ -1,0 +1,18 @@
+title = "Cart"
+url = "/cart"
+layout = "default"
+is_hidden = 0
+[session]
+[cart]
+showDiscountApplier = 1
+showTaxes = 0
+showShipping = 1
+showProceedToCheckoutButton = 0
+==
+{% component 'cart' %}
+
+{% if cart.products.count > 0 %}
+<a href="{{ 'checkout' | page }}" class="btn">
+    Begin checkout
+</a>
+{% endif %}

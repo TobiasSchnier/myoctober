@@ -1,0 +1,15 @@
+title = "Checkout"
+url = "/checkout/:step?"
+layout = "default"
+is_hidden = 0
+
+[signUp]
+
+[checkout]
+step = "{{ :step }}"
+==
+{% if not user %}
+{% component 'signUp' %}
+{% else %}
+{% component 'checkout' %}
+{% endif %}

@@ -1,7 +1,7 @@
 description = "Default layout"
 
+[mallDependencies]
 [session]
-security = "all"
 
 ==
 <!DOCTYPE html>
@@ -26,7 +26,7 @@ security = "all"
 
     <!-- Header -->
     {% partial 'header'%}
-
+    {% component 'mallDependencies' %}
 
 
     <!-- Content -->

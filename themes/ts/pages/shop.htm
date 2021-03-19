@@ -1,0 +1,26 @@
+title = "Shop"
+url = "/shop"
+layout = "default"
+is_hidden = 0
+
+[products]
+filterComponent = "productsFilter"
+setPageTitle = 0
+includeVariants = 1
+includeChildren = 0
+perPage = 9
+paginate = 1
+
+[productsFilter]
+category = 2
+showPriceFilter = 1
+showBrandFilter = 1
+showOnSaleFilter = 0
+includeSliderAssets = 1
+==
+<h1>SHOP</h1>
+
+
+{% component 'productsFilter' %}
+
+{% component 'products' %}
