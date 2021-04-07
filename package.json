@@ -42,6 +42,8 @@
     "chai": "^4.2.0",
     "jquery": "^3.4.1",
     "jsdom": "^15.1.1",
+    "laravel-elixir": "^6.0.0-18",
+    "laravel-elixir-livereload": "^1.1.6",
     "mocha": "^6.2.0",
     "sinon": "^7.4.1"
   }
